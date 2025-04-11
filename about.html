@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About - Pandi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: url('1.jpeg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn .5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      padding: 40px;
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      color: white;
+    }
+
+    .left {
+      flex: 1;
+    }
+
+    .left h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .left p {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .right img {
+      width: 250px;
+      height: 250px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .right {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h2>About Me</h2>
+      <p>
+        I'm Pandi, a passionate developer exploring embedded systems and IoT. I love creating real-time hardware projects, including smart systems, automation, and AI-integrated electronics. I enjoy turning concepts into working prototypes, always learning and building. This portfolio shows my journey and skills.
+      </p>
+    </div>
+    <div class="right">
+      <img src="10.jpeg" alt="Pandi">
+    </div>
+  </div>
+</body>
+</html>

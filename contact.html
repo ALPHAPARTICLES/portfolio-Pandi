@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Pandi</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: url('3.jpeg') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      padding: 40px 20px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .contact-item {
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .contact-item img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .contact-item a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+
+    .contact-item a:hover {
+      color: #ff4b2b;
+    }
+
+    @media (max-width: 500px) {
+      .glass {
+        width: 90%;
+        padding: 30px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glass">
+    <h1>Contact Me</h1>
+    <div class="contact-item">
+      <img src="1.png" alt="Call Icon" />
+      <a href="tel:+9174492426xx">+91 987658888 </a>
+    </div>
+    <div class="contact-item">
+      <img src="9.jpg" alt="Instagram Icon" />
+      <a href="https://instagram.com/yourprofile" target="_blank">@aravinth pandi </a>
+    </div>
+    <div class="contact-item">
+      <img src="8.png" alt="Email Icon" />
+      <a href="mailto:aravinthpandi118@gmail.com">your@email.com</a>
+    </div>
+  </div>
+</body>
+</html>
