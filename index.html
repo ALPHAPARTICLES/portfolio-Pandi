@@ -15,147 +15,157 @@
 
     body {
       height: 100vh;
-      background: url('2.jpeg') no-repeat center center/cover;
-      background-size: cover;
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      position: relative;
       animation: fadeIn 1.5s ease-in-out;
     }
 
     @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Decorative blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .blob1 {
+      width: 300px;
+      height: 300px;
+      background: #ff4d6d;
+      top: -100px;
+      left: -100px;
+    }
+
+    .blob2 {
+      width: 200px;
+      height: 200px;
+      background: #8338ec;
+      bottom: -80px;
+      right: -80px;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
     }
 
     header {
-      width: 100%;
-      padding: 20px;
       text-align: center;
       font-size: 3rem;
       font-weight: 700;
       color: #fff;
       text-transform: uppercase;
       letter-spacing: 3px;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      margin-bottom: 30px;
       animation: slideDown 1s ease forwards;
-      border-bottom: 5px solid #00b4d8;
+      z-index: 2;
     }
 
     @keyframes slideDown {
-      0% { opacity: 0; transform: translateY(-40px); }
-      100% { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .profile-pic {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
-      margin: 30px auto 20px;
-      background: url('10.jpeg') center/cover no-repeat;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-      border: 5px solid #fff;
-      animation: popUp 1s ease-out forwards;
+      background: url('https://i.imgur.com/8Km9tLL.jpg') center/cover no-repeat;
+      border: 5px solid white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: popUp 1s ease-out forwards, floatY 3s ease-in-out infinite;
+      z-index: 2;
     }
 
     @keyframes popUp {
-      0% { transform: scale(0); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     .info {
       color: #fff;
       text-align: center;
-      margin-bottom: 30px;
+      margin: 20px 0 40px;
       animation: fadeUp 1.2s ease-out forwards;
+      z-index: 2;
     }
 
     .info h2 {
       font-size: 2rem;
       font-weight: 600;
-      margin-bottom: 10px;
     }
 
     .info p {
       font-size: 1.2rem;
       font-weight: 300;
-      line-height: 1.6;
       margin-top: 10px;
-      color: rgba(255, 255, 255, 0.85);
+      color: #eaf7ff;
     }
 
     @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .buttons {
       display: flex;
-      gap: 30px;
+      gap: 25px;
       animation: fadeUp 1.5s ease-out forwards;
+      z-index: 2;
     }
 
     .buttons button {
-      padding: 15px 30px;
+      padding: 14px 28px;
       border: none;
       border-radius: 40px;
-      cursor: pointer;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       color: #fff;
-      background: #00b4d8;
+      cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-      text-transform: uppercase;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     }
 
-    .buttons button:nth-child(2) {
-      background: #ff4d6d;
-    }
-
-    .buttons button:nth-child(3) {
-      background: #8338ec;
-    }
+    .buttons button:nth-child(1) { background: #00c9a7; }
+    .buttons button:nth-child(2) { background: #ff4d6d; }
+    .buttons button:nth-child(3) { background: #8338ec; }
 
     .buttons button:hover {
       transform: scale(1.1);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    }
-
-    .buttons button:focus {
-      outline: none;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     }
 
     @media (max-width: 600px) {
-      header {
-        font-size: 2rem;
-        padding: 10px;
-      }
-
-      .profile-pic {
-        width: 150px;
-        height: 150px;
-      }
-
-      .info h2 {
-        font-size: 1.6rem;
-      }
-
-      .info p {
-        font-size: 1rem;
-      }
-
-      .buttons {
-        flex-direction: column;
-        gap: 20px;
-      }
+      header { font-size: 2rem; }
+      .profile-pic { width: 140px; height: 140px; }
+      .info h2 { font-size: 1.6rem; }
+      .info p { font-size: 1rem; }
+      .buttons { flex-direction: column; gap: 20px; }
     }
   </style>
 </head>
 <body>
+
+  <!-- Animated decorative blobs -->
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+
   <header>Pandi Portfolio</header>
 
   <div class="profile-pic"></div>
@@ -170,5 +180,12 @@
     <button onclick="window.location.href='projects.html'">Projects</button>
     <button onclick="window.location.href='contact.html'">Contact</button>
   </div>
+
+  <!-- Background sound -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
 </body>
 </html>
